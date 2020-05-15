@@ -60,7 +60,7 @@ const styles = {
   Icon: styled.div``,
 
   MenuText: styled.p`
-    margin-top: 8px;
+    margin-top: -3px;
     margin-right: 5px;
     width: 41px;
     height: 18px;
@@ -111,12 +111,16 @@ const styles = {
     padding: 10px 0;
     font-size: 20px;
     font-family: "Montserrat-Regular";
+    cursor: pointer;
   `,
 
   CloseButtom: styled.div`
+    width: 100%;
+    height: 50px;
+    background: #fff;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 20px;
+    cursor: pointer;
   `,
 
   TextCloseButtom: styled.p`
@@ -124,6 +128,7 @@ const styles = {
     font-size: 14px;
     padding-top: 3px;
     margin-right: 5px;
+    cursor: pointer;
   `,
 };
 

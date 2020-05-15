@@ -57,15 +57,17 @@ const styles = {
     color: #373737;
     padding: 10px 0;
     align-self: center;
+    cursor: default;
     @media (max-width: 1100px) {
       align-self: flex-start;
+      cursor: pointer;
     }
   `,
 
   MenuFilterContainer: styled.div`
     width: 100%;
     @media (max-width: 1100px) {
-      width: 50%;
+      width: 70%;
       position: absolute;
       display: ${(props) => props.toggle};
       margin-top: 40px;
@@ -76,22 +78,18 @@ const styles = {
     }
 
     @media (max-width: 850px) {
-      width: 60%;
-    }
-
-    @media (max-width: 660px) {
       width: 70%;
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 670px) {
       width: 80%;
     }
 
-    @media (max-width: 460px) {
+    @media (max-width: 580px) {
       width: 90%;
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 525px) {
       width: 100%;
     }
   `,
@@ -126,7 +124,7 @@ const styles = {
     background: #fff;
     padding: 10px 15px;
     border-radius: 10px;
-
+    cursor: pointer;
     &:hover {
       background-color: #f7f7f7;
     }
@@ -144,25 +142,27 @@ const styles = {
     display: flex;
     flex-direction: column;
     position: relative;
-
     @media (max-width: 1100px) {
       width: 25%;
     }
 
-    @media (max-width: 765px) {
+    @media (max-width: 930px) {
       width: 30%;
     }
 
-    @media (max-width: 660px) {
+    @media (max-width: 780px) {
       width: 35%;
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 665px) {
       width: 40%;
     }
 
-    @media (max-width: 405px) {
+    @media (max-width: 580px) {
       width: 45%;
+    }
+    @media (max-width: 440px) {
+      width: 55%;
     }
   `,
 
@@ -208,7 +208,7 @@ const styles = {
     font-size: 14px;
     width: 100%;
     height: 40px;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     color: #373737;
     font-family: "Montserrat-Regular";
     @media (max-width: 700px) {
