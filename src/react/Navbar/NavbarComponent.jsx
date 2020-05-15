@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
 
 import Navbar from "./Navbar";
 
-const NavbarComponent = ({ position }) => {
+const NavbarComponent = ({ position, history }) => {
   const [toggle, setToggle] = useState(false);
 
   const onToggle = () => {
     setToggle(!toggle);
   };
 
-  return <Navbar onToggle={onToggle} toggle={toggle} position={position} />;
+  const onGoToHome = () => {
+    history.push("/models");
+  };
+
+  return (
+    <Navbar
+      onToggle={onToggle}
+      toggle={toggle}
+      position={position}
+      onGoToHome={onGoToHome}
+    />
+  );
 };
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,4 +31,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, null)(NavbarComponent);
+export default withRouter(connect(mapStateToProps, null)(NavbarComponent));

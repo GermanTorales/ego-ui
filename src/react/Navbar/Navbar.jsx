@@ -29,11 +29,15 @@ const menu4 = [
   "Acerca de...",
 ];
 
-export default ({ toggle, onToggle, position }) => (
+export default ({ toggle, onToggle, position, onGoToHome }) => (
   <styles.Container>
     <styles.NavbarContainer>
       <styles.NavbarLeft>
-        <styles.LogoImage src={EgoIcon} alt="ego logo" />
+        <styles.LogoImage
+          onClick={() => onGoToHome()}
+          src={EgoIcon}
+          alt="ego logo"
+        />
         <styles.Breadcrumb className="topnav" id="myTopnav">
           <styles.BreadcrumbItem
             color={position === "modelos" ? "#d0021b" : "#000"}

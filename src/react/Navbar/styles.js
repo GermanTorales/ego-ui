@@ -28,6 +28,7 @@ const styles = {
     width: 38px;
     height: 48px;
     object-fit: contain;
+    cursor: pointer;
   `,
 
   Breadcrumb: styled.div`
@@ -45,6 +46,7 @@ const styles = {
     color: ${(props) => props.color};
     border-bottom: ${(props) => props.border};
     padding: calc(39px - 14px);
+    cursor: default;
   `,
 
   // NAVBAR RIGHT
@@ -57,7 +59,9 @@ const styles = {
     margin-right: 2%;
   `,
 
-  Icon: styled.div``,
+  Icon: styled.div`
+    cursor: pointer;
+  `,
 
   MenuText: styled.p`
     margin-top: -3px;

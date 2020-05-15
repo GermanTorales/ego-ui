@@ -4,6 +4,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import NavbarComponent from "./react/Navbar/NavbarComponent";
 import ModelsComponent from "./react/Models/ModelsComponent";
 import SingleModel from "./react/SingleModel/SingleModelComponent";
+import Footer from "./react/Footer/Footer";
+
 import "./assets/styles/fonts.css";
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
         <Route exact path="/models/:id" component={SingleModel} />
         <Redirect to={"/models"} />
       </Switch>
+      <Footer />
     </div>
   );
 }

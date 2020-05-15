@@ -1,189 +1,281 @@
 import React from "react";
 import styled from "styled-components";
 
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import Carousel from "../Carousel";
 
 const Container = styled.div`
-  width: ${(props) => props.width};
+  width: 100%;
   margin: 0 auto;
 `;
 
+//  HEADER STYLES
+
+// HEADER CONTAINER GENERAL
 const Header = styled.div`
-  width: 100%;
-  height: 500px;
+  width: ${(props) => props.width};
+  height: 450px;
   margin-top: 80px;
+  margin-bottom: 40px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media (min-width: 460px) {
+    height: 500px;
+  }
+
+  @media (min-width: 830px) {
+    height: 600px;
+  }
+
+  @media (min-width: 1100px) {
+    width: 85%;
+    margin: 80px auto;
+    height: 400px;
+    flex-direction: row;
+  }
 `;
 
+//HEADER IMAGE CONTAINER
 const HeaderImage = styled.div`
-  width: 50%;
+  width: 100%;
+  @media (min-width: 620px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (min-width: 1100px) {
+    width: 50%;
+  }
 `;
 
+// HEADER IMAGE
 const Image = styled.img`
   width: 100%;
 `;
 
+// HEADER CONTENT CONTAINER
 const HeaderInfo = styled.div`
-  width: 50%;
-  padding-left: 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 460px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1100px) {
+    width: 50%;
+    padding-left: 100px;
+  }
 `;
 
+// HEADER CONTENT TITLE SUP
 const HeaderText = styled.h2`
   font-size: 20px;
   font-family: "Montserrat-Semibold";
   color: #373737;
 `;
 
+// HEADER CONTENT TITLE MAIN
 const HeaderTitle = styled.h3`
   font-family: "Montserrat-Semibold";
-  font-size: 50px;
+  font-size: 25px;
   margin: 0;
   letter-spacing: -1px;
   color: #373737;
+
+  @media (min-width: 1100px) {
+    font-size: 35px;
+  }
 `;
 
+// HEADER CONTENT DESCRIPTION
 const HeaderContent = styled.p`
   display: inline-block;
-  width: 385px;
-  margin-top: 40px;
   font-size: 16px;
   font-family: "Montserrat-Regular";
   font-stretch: normal;
   font-style: normal;
   letter-spacing: -0.1px;
   color: #373737;
+
+  @media (min-width: 1100px) {
+    font-size: 20px;
+  }
 `;
 
-const Features = styled.div`
-  width: 100%;
-  height: auto;
-  padding: 30px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background: #f7f7f7;
-`;
+// HIGHLIGHT STYLES
 
-const CardFeature = styled.div`
-  width: 23%;
-  height: 100%;
-`;
-
-const FeatureImage = styled.div`
-  width: 100%;
-  height: 60%;
-  border-radius: 5px;
-`;
-
-const FImage = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
-const FeatureTitle = styled.h3`
-  font-size: 20px;
-  font-family: "Montserrat-Semibold";
-  color: #373737;
-`;
-
-const FeatureContent = styled.p`
-  font-size: 16px;
-  font-family: "Montserrat-Regular";
-  color: #373737;
-`;
-
-const PrevButton = styled.div`
-  width: 30px;
-  display: flex;
-  margin-top: 60px;
-  background: rgba(255, 255, 255, 0.56);
-`;
-const NextButton = styled(PrevButton)``;
-
+// HIGHLIGHT IMAGENES CONTAINER
 const HighLightImage = styled.div`
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
+  width: 100%;
+  height: 190px;
+  position: relative;
+
+  @media (min-width: 460px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 550px) {
+    width: 80%;
+  }
+
+  @media (min-width: 620px) {
+    height: 230px;
+  }
+
+  @media (min-width: 760px) {
+    width: 60%;
+  }
+
+  @media (min-width: 890px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1100px) {
+    height: 290px;
+    position: absolute;
+    z-index: 1;
+  }
 `;
 
+//HIGHLIGHT IMAGENES
 const HLImage = styled.img`
   width: 100%;
   height: 100%;
 `;
 
+//HIGHLIGHT TEXT CONTAINER
 const HighLightContent = styled.div`
-  width: 40%;
-  height: 100%;
-  padding-top: 40px;
-`;
-
-const HighLightTitle = styled.div`
-  height: 29px;
-  font-size: 20px;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.35;
-  letter-spacing: -0.4px;
-  color: #373737;
-`;
-
-const HLTittle = styled.h4`
-  font-size: 20px;
-  font-family: "Montserrat-Semibold";
-  color: #373737;
-`;
-
-const HighLightText = styled.div`
-  width: 385px;
-  height: 108px;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.69;
-  letter-spacing: -0.1px;
-  color: #373737;
-`;
-
-const HLText = styled.p`
-  font-size: 16px;
-  font-family: "Montserrat-Regular";
-  color: #373737;
-`;
-
-const HighLight = styled.div`
-  width: 100%;
-  height: 290px;
-  margin: 50px 0;
-  position: relative;
-  display: flex;
-  &:nth-of-type(even) {
-    justify-content: flex-end;
-  }
-  &:nth-child(odd) {
-    ${HighLightImage} {
-      right: 0;
-    }
-    ${HighLightContent} {
-      padding-left: 80px;
-    }
-  }
-  &:nth-child(even) {
-    ${HighLightImage} {
-      left: 0;
-    }
-  }
-`;
-
-const HighLightContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: 460px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 550px) {
+    width: 80%;
+  }
+
+  @media (min-width: 760px) {
+    width: 60%;
+  }
+
+  @media (min-width: 890px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1100px) {
+    margin: 0;
+    padding-left: 10%;
+    padding-top: 70px;
+  }
+`;
+
+//HIGHLIGHT TITLE CONTAINER
+const HighLightTitle = styled.div`
+  width: 100%;
+  letter-spacing: -0.4px;
+  color: #373737;
+
+  @media (max-width: 1100px) {
+    margin: 20px auto;
+    height: auto;
+  }
+`;
+
+//HIGHLIGHT TITLE
+const HLTittle = styled.h4`
+  font-size: 17px;
+  font-family: "Montserrat-Semibold";
+  color: #373737;
+  margin: 0;
+
+  @media (min-width: 620px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 760px) {
+    font-size: 20px;
+  }
+`;
+
+//HIGHLIGHT DESCRIPTION CONTAINER
+const HighLightText = styled.div`
+  width: 100%;
+
+  @media (min-width: 1100px) {
+    height: auto;
+    width: 65%;
+  }
+`;
+
+//HIGHLIGHT DESCIPTION
+const HLText = styled.p`
+  font-size: 14px;
+  font-family: "Montserrat-Regular";
+  color: #373737;
+  letter-spacing: -0.1px;
+
+  @media (min-width: 620px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 760px) {
+    font-size: 16px;
+  }
+`;
+
+//HIGHLIGHT IMAGE AND CONTENT CONTAINER
+const HighLight = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: 30px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1100px) {
+    margin: 60px 0;
+    &:nth-of-type(even) {
+      ${HighLightImage} {
+        justify-content: flex-end;
+      }
+    }
+
+    &:nth-child(odd) {
+      ${HighLightImage} {
+        right: 0;
+      }
+    }
+
+    &:nth-child(even) {
+      ${HighLightImage} {
+        left: 0;
+      }
+      ${HighLightContent} {
+        padding-left: 60%;
+      }
+    }
+  }
+`;
+
+//HIGHLIGHT CONTAINER GENERAL
+const HighLightContainer = styled.div`
+  width: ${(props) => props.width};
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1100px) {
+    width: 85%;
+    margin: 0 auto;
+    height: 800px;
+  }
 `;
 
 export default ({ model }) => (
@@ -206,28 +298,12 @@ export default ({ model }) => (
     </Container>
 
     <Container width={"100%"}>
-      <Features>
-        <PrevButton>
-          <ArrowBackIosIcon fontSize={"large"} />
-        </PrevButton>
-        {model.modelfeatures.map((feature, inx) => (
-          <CardFeature>
-            <FeatureImage>
-              <FImage src={feature.photo} />
-            </FeatureImage>
-            <FeatureTitle>{feature.name}</FeatureTitle>
-            <FeatureContent>{feature.description}</FeatureContent>
-          </CardFeature>
-        ))}
-        <NextButton>
-          <ArrowForwardIosIcon fontSize={"large"} />
-        </NextButton>
-      </Features>
+      <Carousel features={model.modelfeatures} />
     </Container>
-    <Container width={"80%"}>
+    <Container width={"85%"}>
       <HighLightContainer>
         {model.modelhighlights.map((highlight, inx) => (
-          <HighLight>
+          <HighLight key={inx}>
             <HighLightImage>
               <HLImage src={highlight.image} />
             </HighLightImage>
