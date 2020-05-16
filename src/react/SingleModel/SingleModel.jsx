@@ -298,11 +298,11 @@ export default ({ model }) => (
     </Container>
 
     <Container width={"100%"}>
-      <Carousel features={model.modelfeatures} />
+      <Carousel features={model.features} />
     </Container>
     <Container width={"85%"}>
       <HighLightContainer>
-        {model.modelhighlights.map((highlight, inx) => (
+        {model.highlights.map((highlight, inx) => (
           <HighLight key={inx}>
             <HighLightImage>
               <HLImage src={highlight.image} />
