@@ -19,7 +19,7 @@ const setFilteredModels = (models) => ({
 });
 
 export const fetchAllModels = () => (dispatch) => {
-  return Axios.get(`${URL}/api/models`)
+  return Axios.get(`${URL}/models`)
     .then((response) => response.data)
     .then((models) => {
       dispatch(setAllModels(models));
@@ -29,7 +29,7 @@ export const fetchAllModels = () => (dispatch) => {
 };
 
 export const fetchSingleModel = (id) => (dispatch) => {
-  return Axios.get(`${URL}/api/models/${id}`)
+  return Axios.get(`${URL}/models/${id}`)
     .then((response) => response.data)
     .then((model) => {
       dispatch(setSingleModel(model));

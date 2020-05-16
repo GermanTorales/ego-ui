@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
+import { URL } from "../config";
+
 import "../assets/styles/carousel.css";
 
 const Cards = ({ features, cardStyle }) => {
@@ -11,7 +13,7 @@ const Cards = ({ features, cardStyle }) => {
       {features.map((feature, i) => {
         return (
           <div className="card" id="card" style={cardStyle} key={i}>
-            <img src={feature.photo} alt="" />
+            <img src={`${URL + feature.photo}`} alt="" />
             <p className="title">{feature.name}</p>
             <p className="desc">{feature.description}</p>
           </div>
