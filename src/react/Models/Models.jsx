@@ -127,7 +127,7 @@ export default ({
           <ModelInfo>
             {model.year} | {model.price}
           </ModelInfo>
-          <ModelImage src={"http://challenge.agenciaego.tech" + model.photo} />
+          <ModelImage src={model.photo} />
           <Button
             onClick={() => onSubmitSingleModel(model.id)}
             image={buttonImage}

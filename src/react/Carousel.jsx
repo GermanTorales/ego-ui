@@ -11,10 +11,7 @@ const Cards = ({ features, cardStyle }) => {
       {features.map((feature, i) => {
         return (
           <div className="card" id="card" style={cardStyle} key={i}>
-            <img
-              src={"http://challenge.agenciaego.tech" + feature.photo}
-              alt=""
-            />
+            <img src={feature.photo} alt="" />
             <p className="title">{feature.name}</p>
             <p className="desc">{feature.description}</p>
           </div>

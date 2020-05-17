@@ -274,7 +274,7 @@ export default ({ model }) => (
     <Container width={"85%"}>
       <Header>
         <HeaderImage>
-          <Image src={"http://challenge.agenciaego.tech" + model.photo} />
+          <Image src={model.photo} />
         </HeaderImage>
         <HeaderInfo>
           <HeaderText>{model.name}</HeaderText>
@@ -296,9 +296,7 @@ export default ({ model }) => (
         {model.model_highlights.map((highlight, inx) => (
           <HighLight key={inx}>
             <HighLightImage>
-              <HLImage
-                src={"http://challenge.agenciaego.tech" + highlight.image}
-              />
+              <HLImage src={highlight.image} />
             </HighLightImage>
             <HighLightContent>
               <HighLightTitle>
