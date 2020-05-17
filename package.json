@@ -2,6 +2,7 @@
   "name": "ego-ui",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://germantorales.github.io/ego-ui",
   "engines": {
     "npm": "6.13.4",
     "node": "12.15.0"
@@ -10,6 +11,7 @@
     "@material-ui/core": "^4.9.14",
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
+    "gh-pages": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loader-spinner": "^3.1.14",
@@ -25,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
