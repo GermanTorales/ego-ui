@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ego-ui/static/css/main.cbc61829.chunk.css",
-    "main.js": "/ego-ui/static/js/main.628bcd1b.chunk.js",
-    "main.js.map": "/ego-ui/static/js/main.628bcd1b.chunk.js.map",
+    "main.js": "/ego-ui/static/js/main.e926e730.chunk.js",
+    "main.js.map": "/ego-ui/static/js/main.e926e730.chunk.js.map",
     "runtime-main.js": "/ego-ui/static/js/runtime-main.8e370e2e.js",
     "runtime-main.js.map": "/ego-ui/static/js/runtime-main.8e370e2e.js.map",
     "static/js/2.9c960e9b.chunk.js": "/ego-ui/static/js/2.9c960e9b.chunk.js",
     "static/js/2.9c960e9b.chunk.js.map": "/ego-ui/static/js/2.9c960e9b.chunk.js.map",
     "index.html": "/ego-ui/index.html",
-    "precache-manifest.9efb7fae6bf9e96fb0a40e99b1ecf00c.js": "/ego-ui/precache-manifest.9efb7fae6bf9e96fb0a40e99b1ecf00c.js",
+    "precache-manifest.d6ad8af6e58ea98fa1bbd765bacb1b10.js": "/ego-ui/precache-manifest.d6ad8af6e58ea98fa1bbd765bacb1b10.js",
     "service-worker.js": "/ego-ui/service-worker.js",
     "static/css/main.cbc61829.chunk.css.map": "/ego-ui/static/css/main.cbc61829.chunk.css.map",
     "static/js/2.9c960e9b.chunk.js.LICENSE.txt": "/ego-ui/static/js/2.9c960e9b.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.8e370e2e.js",
     "static/js/2.9c960e9b.chunk.js",
     "static/css/main.cbc61829.chunk.css",
-    "static/js/main.628bcd1b.chunk.js"
+    "static/js/main.e926e730.chunk.js"
   ]
 }

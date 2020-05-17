@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ego-ui/precache-manifest.9efb7fae6bf9e96fb0a40e99b1ecf00c.js"
+  "/ego-ui/precache-manifest.d6ad8af6e58ea98fa1bbd765bacb1b10.js"
 );
 
 self.addEventListener('message', (event) => {
