@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ego-ui/static/css/main.cbc61829.chunk.css",
+    "main.js": "/ego-ui/static/js/main.e926e730.chunk.js",
+    "main.js.map": "/ego-ui/static/js/main.e926e730.chunk.js.map",
+    "runtime-main.js": "/ego-ui/static/js/runtime-main.8e370e2e.js",
+    "runtime-main.js.map": "/ego-ui/static/js/runtime-main.8e370e2e.js.map",
+    "static/js/2.9c960e9b.chunk.js": "/ego-ui/static/js/2.9c960e9b.chunk.js",
+    "static/js/2.9c960e9b.chunk.js.map": "/ego-ui/static/js/2.9c960e9b.chunk.js.map",
+    "index.html": "/ego-ui/index.html",
+    "precache-manifest.9ff654ccda2c833d52a1e50fd5d0f84c.js": "/ego-ui/precache-manifest.9ff654ccda2c833d52a1e50fd5d0f84c.js",
+    "service-worker.js": "/ego-ui/service-worker.js",
+    "static/css/main.cbc61829.chunk.css.map": "/ego-ui/static/css/main.cbc61829.chunk.css.map",
+    "static/js/2.9c960e9b.chunk.js.LICENSE.txt": "/ego-ui/static/js/2.9c960e9b.chunk.js.LICENSE.txt",
+    "static/media/fonts.css": "/ego-ui/static/media/Montserrat-SemiBold.c88cecbf.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8e370e2e.js",
+    "static/js/2.9c960e9b.chunk.js",
+    "static/css/main.cbc61829.chunk.css",
+    "static/js/main.e926e730.chunk.js"
+  ]
+}
