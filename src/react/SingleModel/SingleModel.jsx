@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 import Carousel from "../Carousel";
 
-import { URL } from "../../config";
-
 const Container = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -276,7 +274,7 @@ export default ({ model }) => (
     <Container width={"85%"}>
       <Header>
         <HeaderImage>
-          <Image src={`${URL + model.photo}`} />
+          <Image src={"http://challenge.agenciaego.tech" + model.photo} />
         </HeaderImage>
         <HeaderInfo>
           <HeaderText>{model.name}</HeaderText>
@@ -298,7 +296,9 @@ export default ({ model }) => (
         {model.model_highlights.map((highlight, inx) => (
           <HighLight key={inx}>
             <HighLightImage>
-              <HLImage src={`${URL + highlight.image}`} />
+              <HLImage
+                src={"http://challenge.agenciaego.tech" + highlight.image}
+              />
             </HighLightImage>
             <HighLightContent>
               <HighLightTitle>

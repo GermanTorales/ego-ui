@@ -1,8 +1,6 @@
 import { GET_ALL_MODELS, GET_SINGLE_MODEL, FILTER_MODELS } from "./types";
 import Axios from "axios";
 
-import { URL } from "../../config";
-
 const setAllModels = (models) => ({
   type: GET_ALL_MODELS,
   models,
@@ -19,7 +17,7 @@ const setFilteredModels = (models) => ({
 });
 
 export const fetchAllModels = () => (dispatch) => {
-  return Axios.get(`${URL}/models`)
+  return Axios.get(`http://challenge.agenciaego.tech/models`)
     .then((response) => response.data)
     .then((models) => {
       dispatch(setAllModels(models));
@@ -29,7 +27,7 @@ export const fetchAllModels = () => (dispatch) => {
 };
 
 export const fetchSingleModel = (id) => (dispatch) => {
-  return Axios.get(`${URL}/models/${id}`)
+  return Axios.get(`http://challenge.agenciaego.tech/models/${id}`)
     .then((response) => response.data)
     .then((model) => {
       dispatch(setSingleModel(model));
