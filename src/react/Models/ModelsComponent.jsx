@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { history } from "react-router-dom";
 
 import {
   fetchAllModels,
@@ -18,7 +17,7 @@ const ModelsComponent = ({
   setNewPosition,
   history,
 }) => {
-  const [modelsState, setModelsState] = useState(models);
+  const [modelsState, setModelsState] = useState([]);
 
   //FUNCIONA PARA AGREGARLE LOS PUNTOS DE MILES AL PRECIO
   function formatNumber(num) {
@@ -41,25 +40,24 @@ const ModelsComponent = ({
   const onChangeFilter = (e, filter) => {
     e.preventDefault();
     let newModels = [];
-    if (filter.toLowerCase() === "todos") newModels = originalModels;
+    if (filter === "Todos") newModels = originalModels;
     else {
-      newModels = originalModels.filter(
-        (model) => model.segment === filter.toLowerCase()
-      );
+      newModels = originalModels.filter((model) => model.segment === filter);
     }
     changeModelsStore(newModels);
   };
 
-  //FUNCIONP ARA MODIFICAR EL ARREGLO DE MODELOS SEGUN EL ORDEN QUE SE ELIJA EN EL MENU DE ORDENES
+  //FUNCION PARA MODIFICAR EL ARREGLO DE MODELOS SEGUN EL ORDEN QUE SE ELIJA EN EL MENU DE ORDENES
   const onChangeOrder = (e, order, camp) => {
     e.preventDefault();
     let newModels = [];
+    if (order === "Todos") newModels = modelsState.slice();
     if (order === "mayor" || order === "nuevo") {
-      newModels = originalModels.sort((a, b) => b[camp] - a[camp]);
+      newModels = modelsState.sort((a, b) => b[camp] - a[camp]);
     } else {
-      newModels = originalModels.sort((a, b) => a[camp] - b[camp]);
+      newModels = modelsState.sort((a, b) => a[camp] - b[camp]);
     }
-
+    setModelsState(newModels);
     changeModelsStore(newModels);
   };
 
@@ -70,17 +68,17 @@ const ModelsComponent = ({
   };
 
   useEffect(() => {
+    setNewPosition("modelos"); //CUANDO SE RENDERIZA EL COMPONENTE SE SETEA LA POSICION EN "MODELOS" PARA LA NAVBAR
     fetchAllModels().then((res) => {
       res.forEach((e) => (e.price = formatNumber(e.price)));
       setModelsState(res);
     });
-    setNewPosition("modelos"); //CUANDO SE RENDERIZA EL COMPONENTE SE SETEA LA POSICION EN "MODELOS" PARA LA NAVBAR
-  }, [fetchAllModels]);
+  }, [setNewPosition, fetchAllModels]);
 
   //FUNCION PARA DETECTAR CAMBIOS EN EL ARREGLO DE MODELOS Y ASI RE-RENDERIZAR EL COMPONENTE
   useEffect(() => {
     setModelsState(models);
-  }, [models]);
+  }, [models, setModelsState]);
 
   return (
     <Models

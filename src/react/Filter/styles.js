@@ -48,10 +48,8 @@ const styles = {
 
   DropdownTitle: styled.p`
     width: 100px;
-    font-family: "Montserrat-Semibold";
+    font-family: "Montserrat-SemiBold" !important;
     font-size: 14px;
-    font-stretch: normal;
-    font-style: normal;
     letter-spacing: 0.08px;
     margin: 0;
     color: #373737;
@@ -107,19 +105,18 @@ const styles = {
     text-decoration: none;
     display: inline-block;
     margin-right: 30px;
-    font-size: 14px;
-    color: #373737;
-    font-family: "Montserrat-Regular";
     @media (max-width: 1100px) {
       display: block;
       width: 100%;
       height: 40px;
       padding: 10px;
-      font-size: 10px;
     }
   `,
 
   MenuButtonItem: styled.button`
+    font-size: 14px;
+    color: #373737;
+    font-family: "Montserrat-Regular" !important;
     border: none;
     background: #fff;
     padding: 10px 15px;
@@ -130,6 +127,7 @@ const styles = {
     }
 
     @media (max-width: 1100px) {
+      font-size: 10px;
       padding: 0;
       border: none;
     }
@@ -205,18 +203,18 @@ const styles = {
   `,
 
   MenuOrderItem: styled.li`
-    font-size: 14px;
     width: 100%;
     height: 40px;
     padding: 10px 0 10px 10px;
-    color: #373737;
-    font-family: "Montserrat-Regular";
     @media (max-width: 700px) {
       font-size: 10px;
     }
   `,
 
   OrderButton: styled.button`
+    font-size: 14px;
+    color: #373737;
+    font-family: "Montserrat-Regular" !important;
     background: #fff;
     border: none;
   `,

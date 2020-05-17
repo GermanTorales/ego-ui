@@ -33,13 +33,10 @@ export default ({ toggle, onToggle, position, onGoToHome }) => (
   <styles.Container>
     <styles.NavbarContainer>
       <styles.NavbarLeft>
-        <styles.LogoImage
-          onClick={() => onGoToHome()}
-          src={EgoIcon}
-          alt="ego logo"
-        />
+        <styles.LogoImage onClick={onGoToHome} src={EgoIcon} alt="ego logo" />
         <styles.Breadcrumb className="topnav" id="myTopnav">
           <styles.BreadcrumbItem
+            onClick={onGoToHome}
             color={position === "modelos" ? "#d0021b" : "#000"}
             border={position === "modelos" ? "4px solid #d0021b" : "none"}
           >
@@ -56,7 +53,7 @@ export default ({ toggle, onToggle, position, onGoToHome }) => (
       <styles.NavbarRight>
         <styles.MenuText>Menú</styles.MenuText>
         <styles.Icon>
-          <MenuIcon onClick={onToggle} />
+          <MenuIcon fontSize={"large"} onClick={onToggle} />
         </styles.Icon>
       </styles.NavbarRight>
     </styles.NavbarContainer>

@@ -21,20 +21,22 @@
     float: none !important;
     transition: transform .2s ease-in-out;
     vertical-align: top;
-    padding: 20px 25px;
+    padding: 20px 0px;
 }
 
 .card .title {
-    font-family: "Montserrat-Semibold";
+    font-family: "Montserrat-SemiBold" !important;
     font-size: 20px;
+    color: #373737;
 }
 
 .card .desc {
     font-size: 14px;
-    font-family: "Montserrat-Regular";
+    font-family: "Montserrat-Regular" !important;
     word-wrap: break-word;
     white-space: -moz-pre-wrap;
     white-space: pre-wrap;
+    color: #373737;
 }
 
 .card img {
@@ -44,7 +46,8 @@
 }
 
 .slider-btn {
-    padding: 0;
+    margin: 20px 0;
+    padding: 100px 10px 80px 10px;
     width: 45px;
     height: 100%;
     border: 0;
@@ -54,7 +57,9 @@
     position: absolute;
     z-index: 999;
     transition: all 0.6s ease 0s;
+    background-color: rgba(255, 255, 255, 0.56)
 }
+
 
 
 .btn-r {
@@ -64,3 +69,10 @@
 .btn-l {
     left: 0px;
 }
+
+/* 
+@media(max-width: 670px) {
+    .slider-btns {
+        display: none;
+    }
+} */

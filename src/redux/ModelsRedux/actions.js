@@ -25,7 +25,7 @@ export const fetchAllModels = () => (dispatch) => {
       dispatch(setAllModels(models));
       return models;
     })
-    .catch((err) => err.message);
+    .catch((err) => err.response);
 };
 
 export const fetchSingleModel = (id) => (dispatch) => {

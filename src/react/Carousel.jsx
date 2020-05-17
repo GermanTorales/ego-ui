@@ -33,26 +33,26 @@ const Display = ({ features }) => {
 
   useEffect(() => {
     let boxWidth = document.getElementById("card").clientWidth;
+
     setWidth(boxWidth);
   }, []);
 
   const handleClick = (type) => {
-    let margin = window.getComputedStyle(document.getElementById("card"))
-      .marginRight;
-    margin = JSON.parse(margin.replace(/px/i, ""));
+    let paddingRight = window.getComputedStyle(document.getElementById("card"))
+      .paddingRight;
+    paddingRight = JSON.parse(paddingRight.replace(/px/i, ""));
 
     const cardWidth = width;
-    const cardMargin = margin;
     const cardNumber = features.length;
     let curCard = currentCard;
     let pos = position;
 
     if (type === "next" && curCard < cardNumber - 1) {
       curCard++;
-      pos -= cardWidth + cardMargin;
+      pos -= cardWidth + paddingRight;
     } else if (type === "prev" && curCard > 0) {
       curCard--;
-      pos += cardWidth + cardMargin;
+      pos += cardWidth + paddingRight;
     }
 
     setCard(curCard, pos);
@@ -70,14 +70,17 @@ const Display = ({ features }) => {
     <div className="cards-slider">
       <div className="slider-btns">
         <ArrowBackIosIcon
+          fontSize={"large"}
           className="slider-btn btn-l"
           onClick={() => handleClick("prev")}
         />
         <ArrowForwardIosIcon
+          fontSize={"large"}
           className="slider-btn btn-r"
           onClick={() => handleClick("next")}
         />
       </div>
+
       <Cards features={features} cardStyle={cardStyle} />
     </div>
   );

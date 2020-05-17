@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 50px;
-  font-family: "Montserrat-Bold";
+  font-family: "Montserrat-Bold" !important;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.14;
@@ -55,7 +55,7 @@ const Button = styled.button`
 
 const ModelTitle = styled.h2`
   font-size: 28px;
-  font-family: "Montserrat-Semibold";
+  font-family: "Montserrat-SemiBold" !important;
   letter-spacing: -0.65px;
   text-align: center;
   color: #000000;
@@ -83,6 +83,7 @@ const Model = styled.div`
     ${Button} {
       display: inline-block;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     ${ModelTitle} {
@@ -92,7 +93,7 @@ const Model = styled.div`
 `;
 
 const ModelInfo = styled.h3`
-  font-family: "Montserrat-Regular";
+  font-family: "Montserrat-Regular" !important;
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
@@ -128,7 +129,7 @@ export default ({
           <ModelInfo>
             {model.year} | {model.price}
           </ModelInfo>
-          <ModelImage src={`${URL + model.thumbnail}`} />
+          <ModelImage src={`${URL + model.photo}`} />
           <Button
             onClick={() => onSubmitSingleModel(model.id)}
             image={buttonImage}

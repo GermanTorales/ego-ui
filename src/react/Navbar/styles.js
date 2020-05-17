@@ -40,13 +40,17 @@ const styles = {
   `,
 
   BreadcrumbItem: styled.div`
-    font-family: "Montserrat-Semibold";
+    font-family: "Montserrat-SemiBold" !important;
     font-size: 14px;
     margin-left: 50px;
     color: ${(props) => props.color};
     border-bottom: ${(props) => props.border};
     padding: calc(39px - 14px);
     cursor: default;
+
+    &:nth-child(1) {
+      cursor: pointer;
+    }
   `,
 
   // NAVBAR RIGHT
@@ -64,11 +68,11 @@ const styles = {
   `,
 
   MenuText: styled.p`
-    margin-top: -3px;
     margin-right: 5px;
+    padding-bottom: 1px;
     width: 41px;
     height: 18px;
-    font-family: "Montserrat-Regular";
+    font-family: "Montserrat-Regular" !important;
     font-size: 14px;
     font-style: normal;
     letter-spacing: normal;
@@ -87,7 +91,7 @@ const styles = {
   `,
 
   ToggleMenu: styled.div`
-    z-index: 10;
+    z-index: 1000;
     position: absolute;
     width: 35%;
     right: 0;
@@ -114,7 +118,7 @@ const styles = {
     text-decoration: none;
     padding: 10px 0;
     font-size: 20px;
-    font-family: "Montserrat-Regular";
+    font-family: "Montserrat-Regular" !important;
     cursor: pointer;
   `,
 
@@ -128,7 +132,7 @@ const styles = {
   `,
 
   TextCloseButtom: styled.p`
-    font-family: "Montserrat-Regular";
+    font-family: "Montserrat-Regular" !important;
     font-size: 14px;
     padding-top: 3px;
     margin-right: 5px;

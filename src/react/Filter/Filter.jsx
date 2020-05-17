@@ -8,7 +8,7 @@ const menuFilter = [
   "Todos",
   "Autos",
   "Pickups y Comerciales",
-  "SUV'S y Crossovers",
+  "SUVs y Crossovers",
 ];
 
 export default ({
@@ -57,6 +57,11 @@ export default ({
         </styles.TitleOrderContainer>
         <styles.MenuOrderContainer toggle={!toggleOrder && "none"}>
           <styles.MenuOrderList>
+            <styles.MenuOrderItem>
+              <styles.OrderButton onClick={(e) => onChangeOrder(e, "Todos")}>
+                Nada
+              </styles.OrderButton>
+            </styles.MenuOrderItem>
             <styles.MenuOrderItem>
               <styles.OrderButton
                 onClick={(e) => onChangeOrder(e, "menor", "price")}
