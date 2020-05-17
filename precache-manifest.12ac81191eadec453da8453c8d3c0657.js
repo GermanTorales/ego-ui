@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f559f7bf721e64459feba20c97fe3706",
+    "revision": "13cd61d5a3c89be588fe76479953ef47",
     "url": "/ego-ui/index.html"
   },
   {
-    "revision": "6a840dc1d6eae154611e",
+    "revision": "507888d774ec462e20ee",
     "url": "/ego-ui/static/css/main.cbc61829.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ego-ui/static/js/2.9c960e9b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6a840dc1d6eae154611e",
-    "url": "/ego-ui/static/js/main.e926e730.chunk.js"
+    "revision": "507888d774ec462e20ee",
+    "url": "/ego-ui/static/js/main.c42c868e.chunk.js"
   },
   {
     "revision": "e817deade4ea4c8b6282",
