@@ -19,8 +19,7 @@ const setFilteredModels = (models) => ({
 export const fetchAllModels = () => (dispatch) => {
   return Axios({
     method: "GET",
-    url: "http://challenge.agenciaego.tech/models",
-    headers: { "Access-Control-Allow-Origin": "*" },
+    url: "https://challenge.agenciaego.tech/models",
   })
     .then((response) => response.data)
     .then((models) => {
@@ -34,7 +33,6 @@ export const fetchSingleModel = (id) => (dispatch) => {
   return Axios({
     method: "GET",
     url: `http://challenge.agenciaego.tech/models/${id}`,
-    headers: { "Access-Control-Allow-Origin": "*" },
   })
     .then((response) => response.data)
     .then((model) => {
