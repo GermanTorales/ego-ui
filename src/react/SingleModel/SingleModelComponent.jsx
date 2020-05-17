@@ -12,12 +12,10 @@ const SingleModelComponent = ({
   fetchSingleModel,
   setNewPosition,
 }) => {
-  const [modelState, setModelState] = useState(model);
-
   useEffect(() => {
-    fetchSingleModel(match.params.id).then((data) => setModelState(data));
+    fetchSingleModel(match.params.id);
     setNewPosition("ficha");
-  }, []);
+  }, [fetchSingleModel, setNewPosition, model]);
 
   return (
     <div>{model && model.name ? <SingleModel model={model} /> : null}</div>

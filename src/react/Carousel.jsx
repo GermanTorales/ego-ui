@@ -12,7 +12,7 @@ const Cards = ({ features, cardStyle }) => {
         return (
           <div className="card" id="card" style={cardStyle} key={i}>
             <img
-              src={"https://challenge.agenciaego.tech" + feature.photo}
+              src={"http://challenge.agenciaego.tech" + feature.photo}
               alt=""
             />
             <p className="title">{feature.name}</p>

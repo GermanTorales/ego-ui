@@ -19,7 +19,7 @@ const setFilteredModels = (models) => ({
 export const fetchAllModels = () => (dispatch) => {
   return Axios({
     method: "GET",
-    url: "https://challenge.agenciaego.tech/models",
+    url: "http://challenge.agenciaego.tech/models",
   })
     .then((response) => response.data)
     .then((models) => {
@@ -30,15 +30,12 @@ export const fetchAllModels = () => (dispatch) => {
 };
 
 export const fetchSingleModel = (id) => (dispatch) => {
-  return Axios({
+  Axios({
     method: "GET",
-    url: `https://challenge.agenciaego.tech/models/${id}`,
+    url: `http://challenge.agenciaego.tech/models/${id}`,
   })
     .then((response) => response.data)
-    .then((model) => {
-      dispatch(setSingleModel(model));
-      return model;
-    })
+    .then((model) => dispatch(setSingleModel(model)))
     .catch((err) => err.message);
 };
 
