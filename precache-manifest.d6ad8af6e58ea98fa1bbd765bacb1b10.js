@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "14060688dc8abcb8daf999ac3cec77e8",
+    "revision": "f559f7bf721e64459feba20c97fe3706",
     "url": "/ego-ui/index.html"
   },
   {
