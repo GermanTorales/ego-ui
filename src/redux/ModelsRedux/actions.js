@@ -19,7 +19,7 @@ const setFilteredModels = (models) => ({
 export const fetchAllModels = () => (dispatch) => {
   return Axios({
     method: "GET",
-    url: "https://challenge.agenciaego.tech/models",
+    url: "http://challenge.agenciaego.tech/models",
   })
     .then((response) => response.data)
     .then((models) => {
