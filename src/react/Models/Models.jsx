@@ -4,6 +4,7 @@ import styled from "styled-components";
 import FilterComponent from "../Filter/FilterComponent";
 import buttonImage from "../../assets/images/buttonx3.png";
 
+//CONTAINER GENERAL
 const Container = styled.div`
   width: 85%;
   margin: 0 auto;
@@ -29,6 +30,7 @@ const Title = styled.h1`
   }
 `;
 
+// CONTAINER DE TODOS LOS MODELOS
 const ModelsContainer = styled.div`
   width: 100%;
   margin-top: 80px;
@@ -37,6 +39,7 @@ const ModelsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+// CONTAINDER BOTON VER MAS
 const Button = styled.button`
   display: none;
   border: none;
@@ -59,6 +62,7 @@ const ModelTitle = styled.h2`
   color: #000000;
 `;
 
+// CONTAINER DE CADA MODELO
 const Model = styled.div`
   width: 25%;
   height: 300px;

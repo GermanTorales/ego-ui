@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+// FILTROS CONTAINER GENERAL
 const styles = {
   Container: styled.div`
     width: 100%;
@@ -10,6 +12,7 @@ const styles = {
     border-bottom: 1.5px solid #ccc;
   `,
 
+// DROPDOWN DEL MENU FILTER
   Dropdown: styled.div`
     width: 80%;
     display: flex;
@@ -22,6 +25,7 @@ const styles = {
     }
   `,
 
+// TITLE MENU FILTER
   TitleContainer: styled.div`
     &:hover {
       cursor: pointer;

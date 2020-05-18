@@ -7,10 +7,12 @@ import Navbar from "./Navbar";
 const NavbarComponent = ({ position, history }) => {
   const [toggle, setToggle] = useState(false);
 
+  // FUNCION QUE TOGGLEA EL MENU PRINCIPAL DERECHO
   const onToggle = () => {
     setToggle(!toggle);
   };
 
+  // FUNCTION TANTO PARA EL ICONO EGO COMO PARA LA PESTAÑA MODELOS, REDIRECCIONA A /models
   const onGoToHome = () => {
     history.push("/models");
   };

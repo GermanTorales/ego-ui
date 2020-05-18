@@ -16,6 +16,7 @@ const setFilteredModels = (models) => ({
   models,
 });
 
+// request para todos los modelos
 export const fetchAllModels = () => (dispatch) => {
   return Axios.get(`http://challenge.agenciaego.tech/models`)
     .then((response) => response.data)
@@ -26,6 +27,7 @@ export const fetchAllModels = () => (dispatch) => {
     .catch((err) => err.response);
 };
 
+// requres para un modelo por id
 export const fetchSingleModel = (id) => (dispatch) => {
   return Axios.get(`http://challenge.agenciaego.tech/models/${id}`)
     .then((response) => response.data)

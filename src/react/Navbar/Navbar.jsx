@@ -32,6 +32,7 @@ const menu4 = [
 export default ({ toggle, onToggle, position, onGoToHome }) => (
   <styles.Container>
     <styles.NavbarContainer>
+      {/* LADO IZQUIERDO DEL MENU, CONSTA DEL ICONO Y LAS DOS PESTAÑAS (MODELOS Y FICHA) */}
       <styles.NavbarLeft>
         <styles.LogoImage onClick={onGoToHome} src={EgoIcon} alt="ego logo" />
         <styles.Breadcrumb className="topnav" id="myTopnav">
@@ -50,6 +51,7 @@ export default ({ toggle, onToggle, position, onGoToHome }) => (
           </styles.BreadcrumbItem>
         </styles.Breadcrumb>
       </styles.NavbarLeft>
+      {/* LADO DERECHO DEL MENU, CUENTA CON ICONO PARA MOSTRAR Y OCULTAR EL MENU PRINCIPAL */}
       <styles.NavbarRight>
         <styles.MenuText>Menú</styles.MenuText>
         <styles.Icon>
@@ -57,6 +59,7 @@ export default ({ toggle, onToggle, position, onGoToHome }) => (
         </styles.Icon>
       </styles.NavbarRight>
     </styles.NavbarContainer>
+    {/* MENU QUE TOGGLEA CON TODAS LAS OPCIONES */}
     <styles.ToggleMenu display={!toggle ? "none" : "block"}>
       <styles.CloseButtom onClick={onToggle}>
         <styles.TextCloseButtom>Cerrar</styles.TextCloseButtom>

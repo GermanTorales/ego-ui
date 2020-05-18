@@ -13,8 +13,8 @@ const SingleModelComponent = ({
   setNewPosition,
 }) => {
   useEffect(() => {
-    fetchSingleModel(match.params.id);
-    setNewPosition("ficha");
+    fetchSingleModel(match.params.id); // REQUEST A LA API PARA UN MODELO POR ID
+    setNewPosition("ficha"); //CUANDO SE RENDERIZA EL COMPONENTE SE SETEA LA POSICION EN "FICHA" PARA LA NAVBAR
   }, [match.params.id, fetchSingleModel, setNewPosition]);
 
   return (
