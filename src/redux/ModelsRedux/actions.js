@@ -17,10 +17,7 @@ const setFilteredModels = (models) => ({
 });
 
 export const fetchAllModels = () => (dispatch) => {
-  return Axios({
-    method: "GET",
-    url: "http://challenge.agenciaego.tech/models",
-  })
+  return Axios.get(`http://challenge.agenciaego.tech/models`)
     .then((response) => response.data)
     .then((models) => {
       dispatch(setAllModels(models));
@@ -30,10 +27,7 @@ export const fetchAllModels = () => (dispatch) => {
 };
 
 export const fetchSingleModel = (id) => (dispatch) => {
-  Axios({
-    method: "GET",
-    url: `http://challenge.agenciaego.tech/models/${id}`,
-  })
+  return Axios.get(`http://challenge.agenciaego.tech/models/${id}`)
     .then((response) => response.data)
     .then((model) => dispatch(setSingleModel(model)))
     .catch((err) => err.message);

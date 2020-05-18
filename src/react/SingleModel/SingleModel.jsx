@@ -178,6 +178,7 @@ const HighLightContent = styled.div`
   @media (min-width: 1100px) {
     margin: 0;
     padding-left: 10%;
+    margin-top: 50px;
   }
 `;
 

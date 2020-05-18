@@ -21,9 +21,9 @@ const ModelsComponent = ({
 
   //FUNCIONA PARA AGREGARLE LOS PUNTOS DE MILES AL PRECIO
   function formatNumber(num) {
-    num = num.toString().replace(/\$|\,/g, "");
+    num = num.toString().replace(/\$,/g, "");
     if (isNaN(num)) num = "0";
-    let sign = num == (num = Math.abs(num));
+    let sign = num === (num = Math.abs(num));
     num = Math.floor(num * 100 + 0.50000000001);
     let cents = num % 100;
     num = Math.floor(num / 100).toString();
@@ -33,7 +33,7 @@ const ModelsComponent = ({
         num.substring(0, num.length - (4 * i + 3)) +
         "." +
         num.substring(num.length - (4 * i + 3));
-    return (sign ? "" : "-") + num;
+    return (!sign ? "" : "-") + num;
   }
 
   //FUNCION PARA MODIFICAR EL ARREGLO DE MODELOS SEGUN LA CATEGORIA QUE SE ELIJA EN EL FILTRO

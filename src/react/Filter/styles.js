@@ -64,7 +64,7 @@ const styles = {
 
   MenuFilterContainer: styled.div`
     width: 100%;
-    @media (max-width: 1100px) {
+    @media (max-width: 1120px) {
       width: 70%;
       position: absolute;
       display: ${(props) => props.toggle};
@@ -96,6 +96,7 @@ const styles = {
     margin: 0 0 0 35px;
     padding: 0;
     list-style: none;
+
     @media (max-width: 1110px) {
       margin-left: 0;
     }
@@ -105,7 +106,9 @@ const styles = {
     text-decoration: none;
     display: inline-block;
     margin-right: 30px;
+
     @media (max-width: 1100px) {
+      background: ${(props) => props.background};
       display: block;
       width: 100%;
       height: 40px;
@@ -113,23 +116,27 @@ const styles = {
     }
   `,
 
-  MenuButtonItem: styled.button`
+  MenuButtonItem: styled.div`
     font-size: 14px;
     color: #373737;
     font-family: "Montserrat-Regular" !important;
     border: none;
-    background: #fff;
+    background: transparent;
     padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
+
     &:hover {
       background-color: #f7f7f7;
     }
 
     @media (max-width: 1100px) {
-      font-size: 10px;
       padding: 0;
       border: none;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 10px;
     }
   `,
 
@@ -140,19 +147,19 @@ const styles = {
     display: flex;
     flex-direction: column;
     position: relative;
-    @media (max-width: 1100px) {
+    @media (max-width: 1120px) {
       width: 25%;
     }
 
-    @media (max-width: 930px) {
+    @media (max-width: 1000px) {
       width: 30%;
     }
 
-    @media (max-width: 780px) {
+    @media (max-width: 820px) {
       width: 35%;
     }
 
-    @media (max-width: 665px) {
+    @media (max-width: 700px) {
       width: 40%;
     }
 
@@ -187,7 +194,7 @@ const styles = {
     width: 100%;
     display: ${(props) => props.toggle};
     margin-top: 40px;
-    height: 160px;
+    height: 200px;
     box-shadow: 2px 8px 20px 0 rgba(0, 0, 0, 0.15);
     background-color: #ffffff;
     border-radius: 5px;
@@ -206,17 +213,19 @@ const styles = {
     width: 100%;
     height: 40px;
     padding: 10px 0 10px 10px;
-    @media (max-width: 700px) {
-      font-size: 10px;
-    }
+    background: ${(props) => props.background};
   `,
 
   OrderButton: styled.button`
     font-size: 14px;
     color: #373737;
     font-family: "Montserrat-Regular" !important;
-    background: #fff;
     border: none;
+    background: transparent;
+    cursor: pointer;
+    @media (max-width: 600px) {
+      font-size: 10px;
+    }
   `,
 };
 export default styles;

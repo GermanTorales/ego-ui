@@ -6,6 +6,7 @@ import ModelsComponent from "./react/Models/ModelsComponent";
 import SingleModel from "./react/SingleModel/SingleModelComponent";
 import Footer from "./react/Footer/Footer";
 
+import "./assets/styles/styles.css";
 import "./assets/styles/fonts.css";
 
 function App() {

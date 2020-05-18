@@ -7,9 +7,13 @@ const FilterComponent = ({ onChangeOrder, onChangeFilter }) => {
   const [toggleOrder, setToggleOrder] = useState(false);
 
   const onToggleMenu = (menu) => {
-    menu === "filter"
-      ? setToggleFilter(!toggleFilter)
-      : setToggleOrder(!toggleOrder);
+    if (menu === "filter") {
+      setToggleFilter(!toggleFilter);
+      setToggleOrder(false);
+    } else {
+      setToggleFilter(false);
+      setToggleOrder(!toggleOrder);
+    }
   };
 
   return (

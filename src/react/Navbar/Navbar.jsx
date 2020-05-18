@@ -57,7 +57,7 @@ export default ({ toggle, onToggle, position, onGoToHome }) => (
         </styles.Icon>
       </styles.NavbarRight>
     </styles.NavbarContainer>
-    <styles.ToggleMenu display={!toggle && "none"}>
+    <styles.ToggleMenu display={!toggle ? "none" : "block"}>
       <styles.CloseButtom onClick={onToggle}>
         <styles.TextCloseButtom>Cerrar</styles.TextCloseButtom>
         <CloseIcon fontSize="default" />

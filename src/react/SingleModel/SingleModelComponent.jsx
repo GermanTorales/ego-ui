@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { fetchSingleModel } from "../../redux/ModelsRedux/actions";
@@ -15,7 +15,7 @@ const SingleModelComponent = ({
   useEffect(() => {
     fetchSingleModel(match.params.id);
     setNewPosition("ficha");
-  }, [fetchSingleModel, setNewPosition, model]);
+  }, [match.params.id, fetchSingleModel, setNewPosition]);
 
   return (
     <div>{model && model.name ? <SingleModel model={model} /> : null}</div>

@@ -34,8 +34,16 @@ export default ({
         <styles.MenuFilterContainer toggle={!toggleFilter && "none"}>
           <styles.MenuFilterList>
             {menuFilter.map((item, inx) => (
-              <styles.MenuFilterItem key={inx}>
-                <styles.MenuButtonItem onClick={(e) => onChangeFilter(e, item)}>
+              <styles.MenuFilterItem
+                key={inx}
+                background={inx === 0 ? "rgba(209, 214, 214, 0.2)" : "#fff"}
+              >
+                <styles.MenuButtonItem
+                  onClick={(e) => {
+                    onChangeFilter(e, item);
+                    onToggleMenu("filter");
+                  }}
+                >
                   {item}
                 </styles.MenuButtonItem>
               </styles.MenuFilterItem>
@@ -57,35 +65,52 @@ export default ({
         </styles.TitleOrderContainer>
         <styles.MenuOrderContainer toggle={!toggleOrder && "none"}>
           <styles.MenuOrderList>
-            <styles.MenuOrderItem>
-              <styles.OrderButton onClick={(e) => onChangeOrder(e, "Todos")}>
+            <styles.MenuOrderItem background={"rgba(209, 214, 214, 0.2)"}>
+              <styles.OrderButton
+                onClick={(e) => {
+                  onChangeOrder(e, "Todos");
+                  onToggleMenu("order");
+                }}
+              >
                 Nada
               </styles.OrderButton>
             </styles.MenuOrderItem>
             <styles.MenuOrderItem>
               <styles.OrderButton
-                onClick={(e) => onChangeOrder(e, "menor", "price")}
+                onClick={(e) => {
+                  onChangeOrder(e, "menor", "price");
+                  onToggleMenu("order");
+                }}
               >
                 De <strong>menor </strong>a<strong> mayor </strong> precio
               </styles.OrderButton>
             </styles.MenuOrderItem>
             <styles.MenuOrderItem>
               <styles.OrderButton
-                onClick={(e) => onChangeOrder(e, "mayor", "price")}
+                onClick={(e) => {
+                  onChangeOrder(e, "mayor", "price");
+                  onToggleMenu("order");
+                }}
               >
                 De <strong>mayor </strong>a<strong> menor </strong> precio
               </styles.OrderButton>
             </styles.MenuOrderItem>
             <styles.MenuOrderItem>
               <styles.OrderButton
-                onClick={(e) => onChangeOrder(e, "nuevo", "year")}
+                onClick={(e) => {
+                  onChangeOrder(e, "nuevo", "year");
+                  onToggleMenu("order");
+                }}
               >
                 Más <strong>nuevo </strong> primero
               </styles.OrderButton>
             </styles.MenuOrderItem>
             <styles.MenuOrderItem>
               <styles.OrderButton
-                onClick={(e) => onChangeOrder(e, "viejo", "year")}
+                onClick={(e) => {
+                  onChangeOrder(e, "viejo", "year");
+                  onToggleMenu("order");
+                }}
               >
                 Más <strong>viejo </strong> primero
               </styles.OrderButton>
