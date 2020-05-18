@@ -1,4 +1,4 @@
-### Challenge Agencia Ego
+# Challenge Agencia Ego
 
 ## Una vez clonado o descargado el proyecto ejecutar.
 
@@ -10,4 +10,4 @@ Instala las dependencias necesarias para el proyecto.
 
 Ejecuta el proyecto en modo desarrollo en el puerto _3000_.<br />
 
-# En github pages las peticiones a la API son bloqueadas porque se genera una peticion cruzada, github page es HTTPS y la API HTTP.
+### En github pages las peticiones a la API son bloqueadas porque se genera una peticion cruzada, github page es HTTPS y la API HTTP.
