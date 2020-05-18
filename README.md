@@ -10,4 +10,4 @@ Instala las dependencias necesarias para el proyecto.
 
 Ejecuta el proyecto en modo desarrollo en el puerto _3000_.<br />
 
-### En github pages las peticiones a la API son bloqueadas porque se genera una peticion cruzada, github page es HTTPS y la API HTTP.
+### En github pages las peticiones a la API son bloqueadas porque se genera una peticion cruzada, github page es HTTPS y la API HTTP, por eso en [https://germantorales.github.io/models] https://germantorales.github.io/models no se ve nada relacionado a la API.
