@@ -113,21 +113,17 @@ const HeaderContent = styled.p`
 
 // HIGHLIGHT IMAGENES CONTAINER
 const HighLightImage = styled.div`
-  width: 100%;
-  height: 190px;
+  width: 90%;
+  height: 200px;
   position: relative;
-
-  @media (min-width: 460px) {
-    width: 90%;
-    margin: 0 auto;
-  }
+  margin: 0 auto;
 
   @media (min-width: 550px) {
     width: 80%;
   }
 
   @media (min-width: 620px) {
-    height: 230px;
+    height: 240px;
   }
 
   @media (min-width: 760px) {
@@ -149,19 +145,16 @@ const HighLightImage = styled.div`
 const HLImage = styled.img`
   width: 100%;
   height: 100%;
+  border-radius: 2%;
 `;
 
 //HIGHLIGHT TEXT CONTAINER
 const HighLightContent = styled.div`
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @media (min-width: 460px) {
-    width: 90%;
-    margin: 0 auto;
-  }
 
   @media (min-width: 550px) {
     width: 80%;

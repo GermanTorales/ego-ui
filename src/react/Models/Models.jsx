@@ -126,7 +126,7 @@ export default ({
     />
     <ModelsContainer>
       {models.map((model, inx) => (
-        <Model key={inx}>
+        <Model key={model.id.toString()}>
           <ModelTitle>{model.name}</ModelTitle>
           <ModelInfo>
             {model.year} | {model.price}

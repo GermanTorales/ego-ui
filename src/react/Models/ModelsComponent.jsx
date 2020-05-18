@@ -19,6 +19,19 @@ const ModelsComponent = ({
 }) => {
   const [modelsState, setModelsState] = useState([]);
 
+  useEffect(() => {
+    setNewPosition("modelos"); //CUANDO SE RENDERIZA EL COMPONENTE SE SETEA LA POSICION EN "MODELOS" PARA LA NAVBAR
+    fetchAllModels().then((res) => {
+      res.forEach((e) => (e.price = formatNumber(e.price)));
+      setModelsState(res);
+    });
+  }, [setNewPosition, fetchAllModels]);
+
+  //FUNCION PARA DETECTAR CAMBIOS EN EL ARREGLO DE MODELOS Y ASI RE-RENDERIZAR EL COMPONENTE
+  useEffect(() => {
+    setModelsState(models);
+  }, [models, setModelsState]);
+
   //FUNCIONA PARA AGREGARLE LOS PUNTOS DE MILES AL PRECIO
   function formatNumber(num) {
     num = num.toString().replace(/\$,/g, "");
@@ -57,7 +70,6 @@ const ModelsComponent = ({
     } else {
       newModels = modelsState.sort((a, b) => a[camp] - b[camp]);
     }
-    setModelsState(newModels);
     changeModelsStore(newModels);
   };
 
@@ -66,19 +78,6 @@ const ModelsComponent = ({
     setNewPosition("ficha"); //SE SETEA LA POSICION EN "FICHA" PARA EL NAVBAR
     history.push(`/models/${id}`);
   };
-
-  useEffect(() => {
-    setNewPosition("modelos"); //CUANDO SE RENDERIZA EL COMPONENTE SE SETEA LA POSICION EN "MODELOS" PARA LA NAVBAR
-    fetchAllModels().then((res) => {
-      res.forEach((e) => (e.price = formatNumber(e.price)));
-      setModelsState(res);
-    });
-  }, [setNewPosition, fetchAllModels]);
-
-  //FUNCION PARA DETECTAR CAMBIOS EN EL ARREGLO DE MODELOS Y ASI RE-RENDERIZAR EL COMPONENTE
-  useEffect(() => {
-    setModelsState(models);
-  }, [models, setModelsState]);
 
   return (
     <Models
