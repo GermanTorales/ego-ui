@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4219ec0f562231ec8fcd4dc541570f72",
+    "revision": "19855fa2ec284062a208bd1b68ff2842",
     "url": "/ego-ui/index.html"
   },
   {
-    "revision": "c58c0a716315d9b833e7",
-    "url": "/ego-ui/static/css/main.cbc61829.chunk.css"
+    "revision": "589e4106d240fdcf2039",
+    "url": "/ego-ui/static/css/main.8d3c2d1b.chunk.css"
   },
   {
-    "revision": "2d67305cc86910d98491",
-    "url": "/ego-ui/static/js/2.9c960e9b.chunk.js"
+    "revision": "78c410a538d6cc54b3fc",
+    "url": "/ego-ui/static/js/2.a4889b3e.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/ego-ui/static/js/2.9c960e9b.chunk.js.LICENSE.txt"
+    "url": "/ego-ui/static/js/2.a4889b3e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c58c0a716315d9b833e7",
-    "url": "/ego-ui/static/js/main.4c66483a.chunk.js"
+    "revision": "589e4106d240fdcf2039",
+    "url": "/ego-ui/static/js/main.d3edcce6.chunk.js"
   },
   {
     "revision": "e817deade4ea4c8b6282",
