@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
       return { ...state, singleModel: action.model };
 
     case FILTER_MODELS:
-      return { ...state, filterModels: action.models };
+      return { ...state, filterModels: action.orderedModels };
     default:
       return state;
   }
