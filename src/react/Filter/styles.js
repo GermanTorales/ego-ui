@@ -108,9 +108,10 @@ const styles = {
     text-decoration: none;
     display: inline-block;
     margin-right: 30px;
+    background: ${(props) => props.background};
+    border-radius: 10px;
 
     @media (max-width: 1100px) {
-      background: ${(props) => props.background};
       display: block;
       width: 100%;
       height: 40px;
@@ -138,7 +139,7 @@ const styles = {
     }
 
     @media (max-width: 600px) {
-      font-size: 10px;
+      font-size: 12px;
     }
   `,
 
@@ -206,9 +207,6 @@ const styles = {
     display: flex;
     flex-direction: column;
     list-style: none;
-    @media (max-width: 1100px) {
-      margin-right: 20px;
-    }
   `,
 
   MenuOrderItem: styled.li`
@@ -226,7 +224,7 @@ const styles = {
     background: transparent;
     cursor: pointer;
     @media (max-width: 600px) {
-      font-size: 10px;
+      font-size: 12px;
     }
   `,
 };

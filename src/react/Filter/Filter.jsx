@@ -17,6 +17,7 @@ export default ({
   toggleFilter,
   onChangeFilter,
   onChangeOrder,
+  positions,
 }) => {
   return (
     <styles.Container>
@@ -36,7 +37,11 @@ export default ({
             {menuFilter.map((item, inx) => (
               <styles.MenuFilterItem
                 key={inx}
-                background={inx === 0 ? "rgba(209, 214, 214, 0.2)" : "#fff"}
+                background={
+                  positions.filterPosition === item.toLowerCase()
+                    ? "rgba(209, 214, 214, 0.2)"
+                    : "#fff"
+                }
               >
                 <styles.MenuButtonItem
                   onClick={(e) => {
@@ -65,50 +70,80 @@ export default ({
         </styles.TitleOrderContainer>
         <styles.MenuOrderContainer toggle={!toggleOrder && "none"}>
           <styles.MenuOrderList>
-            <styles.MenuOrderItem background={"rgba(209, 214, 214, 0.2)"}>
+            <styles.MenuOrderItem
+              background={
+                positions.orderPosition === "todos"
+                  ? "rgba(209, 214, 214, 0.2)"
+                  : "#fff"
+              }
+            >
               <styles.OrderButton
                 onClick={(e) => {
-                  onChangeOrder(e, "Todos");
+                  onChangeOrder("todos");
                   onToggleMenu("order");
                 }}
               >
                 Nada
               </styles.OrderButton>
             </styles.MenuOrderItem>
-            <styles.MenuOrderItem>
+            <styles.MenuOrderItem
+              background={
+                positions.orderPosition === "menor"
+                  ? "rgba(209, 214, 214, 0.2)"
+                  : "#fff"
+              }
+            >
               <styles.OrderButton
                 onClick={(e) => {
-                  onChangeOrder(e, "menor", "price");
+                  onChangeOrder("menor", "price");
                   onToggleMenu("order");
                 }}
               >
                 De <strong>menor </strong>a<strong> mayor </strong> precio
               </styles.OrderButton>
             </styles.MenuOrderItem>
-            <styles.MenuOrderItem>
+            <styles.MenuOrderItem
+              background={
+                positions.orderPosition === "mayor"
+                  ? "rgba(209, 214, 214, 0.2)"
+                  : "#fff"
+              }
+            >
               <styles.OrderButton
                 onClick={(e) => {
-                  onChangeOrder(e, "mayor", "price");
+                  onChangeOrder("mayor", "price");
                   onToggleMenu("order");
                 }}
               >
                 De <strong>mayor </strong>a<strong> menor </strong> precio
               </styles.OrderButton>
             </styles.MenuOrderItem>
-            <styles.MenuOrderItem>
+            <styles.MenuOrderItem
+              background={
+                positions.orderPosition === "nuevo"
+                  ? "rgba(209, 214, 214, 0.2)"
+                  : "#fff"
+              }
+            >
               <styles.OrderButton
                 onClick={(e) => {
-                  onChangeOrder(e, "nuevo", "year");
+                  onChangeOrder("nuevo", "year");
                   onToggleMenu("order");
                 }}
               >
                 Más <strong>nuevo </strong> primero
               </styles.OrderButton>
             </styles.MenuOrderItem>
-            <styles.MenuOrderItem>
+            <styles.MenuOrderItem
+              background={
+                positions.orderPosition === "viejo"
+                  ? "rgba(209, 214, 214, 0.2)"
+                  : "#fff"
+              }
+            >
               <styles.OrderButton
                 onClick={(e) => {
-                  onChangeOrder(e, "viejo", "year");
+                  onChangeOrder("viejo", "year");
                   onToggleMenu("order");
                 }}
               >

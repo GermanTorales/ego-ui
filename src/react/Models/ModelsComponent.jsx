@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
-import {
-  fetchAllModels,
-  changeModelsStore,
-} from "../../redux/ModelsRedux/actions";
+import { fetchAllModels } from "../../redux/ModelsRedux/actions";
 import { setNewPosition } from "../../redux/NavbarRedux/action";
 
 import Models from "./Models";
@@ -12,8 +9,6 @@ import Models from "./Models";
 const ModelsComponent = ({
   fetchAllModels,
   models,
-  originalModels,
-  changeModelsStore,
   setNewPosition,
   history,
 }) => {
@@ -21,16 +16,13 @@ const ModelsComponent = ({
 
   useEffect(() => {
     setNewPosition("modelos"); //CUANDO SE RENDERIZA EL COMPONENTE SE SETEA LA POSICION EN "MODELOS" PARA LA NAVBAR
-    fetchAllModels().then((res) => {
-      res.forEach((e) => (e.price = formatNumber(e.price)));
-      setModelsState(res);
-    });
-  }, [setNewPosition, fetchAllModels]);
+    fetchAllModels();
+  }, []);
 
   //FUNCION PARA DETECTAR CAMBIOS EN EL ARREGLO DE MODELOS Y ASI RE-RENDERIZAR EL COMPONENTE
   useEffect(() => {
     setModelsState(models);
-  }, [models, setModelsState]);
+  }, [models]);
 
   //FUNCIONA PARA AGREGARLE LOS PUNTOS DE MILES AL PRECIO
   function formatNumber(num) {
@@ -49,30 +41,6 @@ const ModelsComponent = ({
     return (!sign ? "" : "-") + num;
   }
 
-  //FUNCION PARA MODIFICAR EL ARREGLO DE MODELOS SEGUN LA CATEGORIA QUE SE ELIJA EN EL FILTRO
-  const onChangeFilter = (e, filter) => {
-    e.preventDefault();
-    let newModels = [];
-    if (filter === "Todos") newModels = originalModels;
-    else {
-      newModels = originalModels.filter((model) => model.segment === filter);
-    }
-    changeModelsStore(newModels);
-  };
-
-  //FUNCION PARA MODIFICAR EL ARREGLO DE MODELOS SEGUN EL ORDEN QUE SE ELIJA EN EL MENU DE ORDENES
-  const onChangeOrder = (e, order, camp) => {
-    e.preventDefault();
-    let newModels = [];
-    if (order === "Todos") newModels = modelsState.slice();
-    if (order === "mayor" || order === "nuevo") {
-      newModels = modelsState.sort((a, b) => b[camp] - a[camp]);
-    } else {
-      newModels = modelsState.sort((a, b) => a[camp] - b[camp]);
-    }
-    changeModelsStore(newModels);
-  };
-
   //FUNCION QUE REDIRECCIONA A LA VISTA DE UN MODELO EN PARTICULAR
   const onSubmitSingleModel = (id) => {
     setNewPosition("ficha"); //SE SETEA LA POSICION EN "FICHA" PARA EL NAVBAR
@@ -81,9 +49,8 @@ const ModelsComponent = ({
 
   return (
     <Models
+      formatNumber={formatNumber}
       models={modelsState}
-      onChangeFilter={onChangeFilter}
-      onChangeOrder={onChangeOrder}
       onSubmitSingleModel={onSubmitSingleModel}
     />
   );
@@ -99,7 +66,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchAllModels: () => dispatch(fetchAllModels()),
-    changeModelsStore: (m) => dispatch(changeModelsStore(m)),
     setNewPosition: (position) => dispatch(setNewPosition(position)),
   };
 };

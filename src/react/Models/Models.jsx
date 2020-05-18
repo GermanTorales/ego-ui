@@ -112,24 +112,16 @@ const ModelImage = styled.img`
   margin: 0 auto;
 `;
 
-export default ({
-  models,
-  onChangeOrder,
-  onChangeFilter,
-  onSubmitSingleModel,
-}) => (
+export default ({ models, onSubmitSingleModel, formatNumber }) => (
   <Container>
     <Title>Descubrí todos los modelos</Title>
-    <FilterComponent
-      onChangeOrder={onChangeOrder}
-      onChangeFilter={onChangeFilter}
-    />
+    <FilterComponent />
     <ModelsContainer>
       {models.map((model, inx) => (
-        <Model key={model.id.toString()}>
+        <Model key={model.id}>
           <ModelTitle>{model.name}</ModelTitle>
           <ModelInfo>
-            {model.year} | {model.price}
+            {model.year} | {formatNumber(model.price)}
           </ModelInfo>
           <ModelImage src={"http://challenge.agenciaego.tech" + model.photo} />
           <Button

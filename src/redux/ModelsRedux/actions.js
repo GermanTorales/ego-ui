@@ -11,19 +11,16 @@ const setSingleModel = (model) => ({
   model,
 });
 
-const setFilteredModels = (models) => ({
+const setFilteredModels = (orderedModels) => ({
   type: FILTER_MODELS,
-  models,
+  orderedModels,
 });
 
 // request para todos los modelos
 export const fetchAllModels = () => (dispatch) => {
   return Axios.get(`http://challenge.agenciaego.tech/models`)
     .then((response) => response.data)
-    .then((models) => {
-      dispatch(setAllModels(models));
-      return models;
-    })
+    .then((models) => dispatch(setAllModels(models)))
     .catch((err) => err.response);
 };
 
@@ -37,6 +34,6 @@ export const fetchSingleModel = (id) => (dispatch) => {
 
 // FUNCIONES PARA FILTRAR MODELOS
 
-export const changeModelsStore = (models) => (dispatch) => {
-  dispatch(setFilteredModels(models));
+export const changeModelsStore = (orderedModels) => (dispatch) => {
+  dispatch(setFilteredModels(orderedModels));
 };
