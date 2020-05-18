@@ -4,8 +4,6 @@ import styled from "styled-components";
 import FilterComponent from "../Filter/FilterComponent";
 import buttonImage from "../../assets/images/buttonx3.png";
 
-import { URL } from "../../config";
-
 const Container = styled.div`
   width: 85%;
   margin: 0 auto;
@@ -129,7 +127,7 @@ export default ({
           <ModelInfo>
             {model.year} | {model.price}
           </ModelInfo>
-          <ModelImage src={`${URL + model.photo}`} />
+          <ModelImage src={"http://challenge.agenciaego.tech" + model.photo} />
           <Button
             onClick={() => onSubmitSingleModel(model.id)}
             image={buttonImage}
