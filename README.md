@@ -1,6 +1,6 @@
 ### Challenge Agencia Ego
 
-##Una vez clonado o descargado el proyecto ejecutar...
+##Una vez clonado o descargado el proyecto ejecutar.
 
 ### `npm install`
 
