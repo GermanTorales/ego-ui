@@ -17,10 +17,14 @@ const SingleModelComponent = ({
   useEffect(() => {
     fetchSingleModel(match.params.id).then((data) => setModelState(data));
     setNewPosition("ficha");
-  }, []);
+  }, [match.params.id, fetchSingleModel, setNewPosition]);
 
   return (
-    <div>{model && model.name ? <SingleModel model={model} /> : null}</div>
+    <div>
+      {modelState && modelState.name ? (
+        <SingleModel model={modelState} />
+      ) : null}
+    </div>
   );
 };
 
