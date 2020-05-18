@@ -29,10 +29,7 @@ export const fetchAllModels = () => (dispatch) => {
 export const fetchSingleModel = (id) => (dispatch) => {
   return Axios.get(`http://challenge.agenciaego.tech/models/${id}`)
     .then((response) => response.data)
-    .then((model) => {
-      dispatch(setSingleModel(model));
-      return model;
-    })
+    .then((model) => dispatch(setSingleModel(model)))
     .catch((err) => err.message);
 };
 
